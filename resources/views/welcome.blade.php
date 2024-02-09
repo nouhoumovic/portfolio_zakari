@@ -42,7 +42,7 @@ github: https://github.com/naemazam
           <i class="fas fa-circle"></i>
         </div>
 
-        <img src="{{ asset('front/image/home.jpg')}}" alt="">
+        <img src="{{ asset('front/image/home.jpeg')}}" width="50" height="50" alt="">
 
         <div class="icon flex">
           <i class="fab fa-weixin"></i>
@@ -111,6 +111,26 @@ github: https://github.com/naemazam
                 <div class="line">
                 </div>
                 <div class="content content-1">
+                    <section>
+                      <i class="icon fas fa-book-open"></i>
+                      <div class="details">
+                        <span>2022</span>
+                        <h3>Professeur Titulaire</h3>
+                      </div>
+                      <p> CAMES</p>
+                    </section>
+                  </div>
+                <div class="content content-1">
+                    <section>
+                      <i class="icon fas fa-book-open"></i>
+                      <div class="details">
+                        <span>2021</span>
+                        <h3>Professeur Titulaire</h3>
+                      </div>
+                      <p> CNLA MALI</p>
+                    </section>
+                  </div>
+                <div class="content content-1">
                   <section>
                     <i class="icon fas fa-briefcase"></i>
                     <div class="details">
@@ -143,16 +163,7 @@ github: https://github.com/naemazam
                   </section>
                 </div>
 
-                <div class="content content-1">
-                  <section>
-                    <i class="icon fab fa-acquisitions-incorporated"></i>
-                    <div class="details">
-                      <span> 2010</span>
-                      <h3>D.E.A en Sciences de Gestion </h3>
-                    </div>
-                    <p> Université Cheickh Anta Diop (UCAD), Dakar ; Sénégal</p>
-                  </section>
-                </div>
+
               </div>
               <!--     timeline    -->
         </div>
@@ -160,6 +171,16 @@ github: https://github.com/naemazam
           <!--     timeline    -->
           <div class="timeline">
             <div class="line">
+            </div>
+            <div class="content content-1">
+                <section>
+                  <i class="icon fab fa-acquisitions-incorporated"></i>
+                  <div class="details">
+                    <span> 2010</span>
+                    <h3>D.E.A en Sciences de Gestion </h3>
+                </div>
+                <p> Université Cheickh Anta Diop (UCAD), Dakar ; Sénégal</p>
+            </section>
             </div>
             <div class="content content-1">
               <section>
