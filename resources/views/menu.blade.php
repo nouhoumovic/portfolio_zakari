@@ -15,7 +15,7 @@
             <a href="#" class="nav-link">Projets</a>
           </li> --}}
           <li class="nav-item">
-            <a href="{{ route('all_articles') }}" class="nav-link {{ (request()->is('all_articles')) ? 'active' : '' }}">Mes articles</a>
+            <a href="{{ route('all_articles') }}" class="nav-link {{ (request()->is('all_articles')) ? 'active' : '' }}">Articles Zakari</a>
           </li>
           {{-- <li class="nav-item">
             <a href="#" class="nav-link">journey</a>

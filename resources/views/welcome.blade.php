@@ -21,12 +21,12 @@ github: https://github.com/naemazam
             <div class="line"></div>
             <div class="line line2"></div>
             <i class="fas fa-circle"></i>
-            <h3>Dr. </h3>
+            <h3>Pr. </h3>
           </div>
           <div class="heading_bottom">
             <h1><span>Zakari Yaou</span> KAKA</h1>
           </div>
-          <p>Bienvenue sur mon site! Je suis le Dr. Zakari Yaou KAKA</p>
+          <p>Bienvenue sur mon site! Je suis le Pr. Zakari Yaou KAKA</p>
           {{-- <p>Avec plus de 5 ans d'expérience en tant que professeur associé, je m'efforce de créer un environnement d'apprentissage stimulant pour mes étudiants.</p> --}}
         </div>
 
@@ -59,7 +59,7 @@ github: https://github.com/naemazam
           <div class="line"></div>
           <div class="line line2"></div>
           <i class="fas fa-circle"></i>
-          <h3> Mes articles</h3>
+          <h3> Articles Zakari</h3>
         </div>
         <div class="heading_bottom">
           <h2><span></span></h2>
