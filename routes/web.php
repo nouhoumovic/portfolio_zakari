@@ -15,9 +15,9 @@ use App\Http\Controllers\UserController;
 */
 
 
-Route::get('/', [UserController::class, 'welcome'])->name('welcome');
 Route::get('/all_articles', [UserController::class, 'all_articles'])->name('all_articles');
 Route::get('/article/show/{id}', [UserController::class, 'get_article'])->name('get_article');
+Route::get('/', [UserController::class, 'welcome'])->name('welcome');
 
 Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::post('/login', [UserController::class, 'connexion'])->name('connexion');
