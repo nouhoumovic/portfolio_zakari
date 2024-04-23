@@ -22,10 +22,10 @@ Route::get('/article/show/{id}', [UserController::class, 'get_article'])->name('
 Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::post('/login', [UserController::class, 'connexion'])->name('connexion');
 Route::get('/deconnexion', [UserController::class, 'deconnexion'])->name('deconnexion');
+Route::get('/groupe/{id}', [UserController::class, 'groupe_show'])->name('groupe_show');
+
 Route::middleware(['permission'])->group(function () {
-
-Route::resource('user', UserController::class);
-
+    Route::resource('user', UserController::class);
     Route::get('/compte', [UserController::class, 'compte'])->name('compte');
     Route::post('/password', [UserController::class, 'password'])->name('password');
     Route::get('/article/create/{id?}', [UserController::class, 'create'])->name('create');
@@ -36,7 +36,6 @@ Route::resource('user', UserController::class);
     Route::get('/logout', [UserController::class, 'deconnexion'])->name('logout');
     Route::post('/info', [UserController::class, 'info'])->name('info');
     Route::get('/profil', [UserController::class, 'profil'])->name('profil');
-
 
 
 });

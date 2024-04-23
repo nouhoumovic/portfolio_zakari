@@ -36,7 +36,7 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header">
-                  <h3 class="card-title">Article : {{ $article->libelle }}
+                  <h3 class="card-title">Article : {{ $article->libelle }} | Categorie : {{ $article->groupe_libelle }}
                     <a href="{{ route('articles') }}"  class="btn btn-outline-primary waves-effect" title="Modifier">
                     <= Retour
                  </a></h3>

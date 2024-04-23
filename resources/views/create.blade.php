@@ -51,6 +51,15 @@
                           <input type="text" class="form-control" name="libelle" id="libelle" value="{{ $article !=null ? $article->libelle : "" }}" placeholder="Entrer le titre">
                         </div>
                         <div class="form-group">
+                            <label for="exampleInputEmail1">Categorie</label>
+                            <select required  name="groupe_id" class="form-control">
+                                <option value="">Choisir ...</option>
+                                @foreach($groupes as $groupe)
+                                    <option  {{ $article !=null ? ($groupe->id == $article->groupe_id ? 'selected' : '') : ''}} value="{{ $groupe->id }}">{{ $groupe->libelle }}</option>
+                                @endforeach
+                            </select>
+                          </div>
+                        <div class="form-group">
                              <input type="file" id="input-file-max-fs" value="{{ $article !=null ? $article->file : "" }}"  name="file" class="dropify " data-max-file-size="5M" data-default-file="{{$article !=null ? $article->file : " "}}"  data-allowed-file-extensions="pdf"/>
                         </div>
 

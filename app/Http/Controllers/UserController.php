@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Groupe;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
@@ -16,25 +18,33 @@ class UserController extends Controller
      public function welcome()
      {
         $articles = Article::limit(4)->get();
+        $groupes = Groupe::all();
 
-         return view('welcome',compact('articles'));
+         return view('welcome',compact('articles','groupes'));
      }
 
      //mon compte
      public function all_articles()
      {
         $articles = Article::all();
-
-         return view('all_articles',compact('articles'));
+        $groupes = Groupe::all();
+         return view('all_articles',compact('articles','groupes'));
      }
 
       //mon compte
       public function get_article($id)
       {
-        $article = Article::find($id);
-        $articles = Article::all();
+        $article = Article::select(
+            DB::raw('articles.*'),
+            DB::raw('groupes.libelle as groupe_libelle'),
 
-          return view('get_article',compact('article','articles'));
+        )
+            ->join('groupes', 'groupes.id', '=', 'articles.groupe_id')
+            ->where('articles.id',$id)
+            ->first();
+        $articles = Article::all();
+        $groupes = Groupe::all();
+          return view('get_article',compact('article','articles','groupes'));
       }
 
     public function index()
@@ -54,7 +64,13 @@ class UserController extends Controller
             return redirect('/login');
         }
 
-        $articles = Article::all();
+        $articles = Article::select(
+            DB::raw('articles.*'),
+            DB::raw('groupes.libelle as groupe_libelle'),
+
+        )
+            ->join('groupes', 'groupes.id', '=', 'articles.groupe_id')
+            ->get();
 
         return view('article', compact('articles'));
     }
@@ -74,6 +90,7 @@ class UserController extends Controller
         }
 
         $article->libelle = request('libelle');
+        $article->groupe_id = request('groupe_id');
 
         if ($request->file('file') || $request->file('file') != null) {
 
@@ -96,8 +113,9 @@ class UserController extends Controller
         if($id){
             $article = Article::find($id);
         }
+        $groupes = Groupe::all();
 
-        return view('create', compact('article'));
+        return view('create', compact('article','groupes'));
     }
 
     public function article_show($id)
@@ -106,10 +124,36 @@ class UserController extends Controller
             return redirect('/login');
         }
 
-        $article = Article::findOrFail($id);
+        $article = Article::select(
+            DB::raw('articles.*'),
+            DB::raw('groupes.libelle as groupe_libelle'),
+
+        )
+            ->join('groupes', 'groupes.id', '=', 'articles.groupe_id')
+            ->where('articles.id',$id)
+            ->first();
+            $groupes = Groupe::all();
 
 
-        return view('article_show', compact('article'));
+        return view('article_show', compact('article','groupes'));
+    }
+
+    public function groupe_show($id)
+    {
+
+        $articles = Article::select(
+            DB::raw('articles.*'),
+            DB::raw('groupes.libelle as groupe_libelle'),
+            DB::raw('groupes.id as groupe_id'),
+
+        )
+            ->join('groupes', 'groupes.id', '=', 'articles.groupe_id')
+            ->where('groupes.id',$id)
+            ->get();
+            $groupes = Groupe::all();
+
+
+        return view('all_articles', compact('articles','groupes'));
     }
     public function show($id)
     {

@@ -48,6 +48,7 @@
                       <tr>
                         <th style="width: 10px">#</th>
                         <th>Titre</th>
+                        <th>Categorie</th>
                         <th>Action</th>
                       </tr>
                     </thead>
@@ -57,6 +58,7 @@
                             <tr>
                                 <td>{{ $key+1 }}</td>
                                 <td>{{  $article->libelle }}</td>
+                                <td>{{  $article->groupe_libelle }}</td>
                                 <td>
                                     <a title="Détails" href="{{ route('article_show',$article->id) }}"  class="btn btn-outline-info waves-effect" >
                                         Voir

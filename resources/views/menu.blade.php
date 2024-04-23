@@ -8,24 +8,11 @@
           <li class="nav-item">
             <a href="{{ route('welcome') }}" class="nav-link {{ (request()->is('/')) ? 'active' : '' }}">Accueil</a>
           </li>
-          {{-- <li class="nav-item">
-            <a href="#" class="nav-link">A Propos</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Projets</a>
-          </li> --}}
-          <li class="nav-item">
-            <a href="{{ route('all_articles') }}" class="nav-link {{ (request()->is('all_articles')) ? 'active' : '' }}">Articles Zakari</a>
-          </li>
-          {{-- <li class="nav-item">
-            <a href="#" class="nav-link">journey</a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">Blog</a>
-          </li> --}}
-          {{-- <li class="nav-item">
-            <a href="#" class="nav-link">Contact</a>
-          </li> --}}
+          @foreach ($groupes as $groupe)
+            <li class="nav-item">
+                <a href="{{ route('groupe_show',$groupe->id) }}" class="nav-link {{ (request()->is('article/show/')) ? 'active' : '' }}">{{ $groupe->libelle }}</a>
+            </li>
+          @endforeach
         </ul>
         <div class="hamburger">
           <span class="bar"></span>
@@ -35,3 +22,5 @@
       </nav>
     </div>
   </header>
+
+

@@ -19,7 +19,7 @@ github: https://github.com/naemazam
         <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Article : {{ $article->libelle }}</h3>
+                <h3 class="card-title">Article : {{ $article->libelle }} | Categorie : {{ $article->groupe_libelle }}</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
